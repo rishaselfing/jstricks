@@ -1,0 +1,23 @@
+var Class2 = function(inn){
+  var r = 25; //
+  this.inner = inn;
+  this.innerFunc = function(){
+    console.log(r);
+  };
+};
+
+Class2.prototype.b = 6;
+Class2.prototype.f3 = function(){
+  console.log(this.b);//6
+};
+
+Class2.prototype.f4 = function(){
+  this.innerFunc();// 25
+  console.log(this.r);// undefined
+};
+
+var c2 = new Class2(23);
+c2.f3();
+c2.f4();
+
+console.log(c2.r);// undefined
